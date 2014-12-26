@@ -19,7 +19,7 @@ findbugsMain {
 
 repositories {
 	mavenLocal()
-    mavenCentral()
+	mavenCentral()
 }
 
 dependencies {
