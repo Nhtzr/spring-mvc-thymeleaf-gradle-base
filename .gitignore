@@ -1,5 +1,6 @@
 .gradle
 .idea
+/.nb-gradle/private/
 build/
 classes/
 *.iml
