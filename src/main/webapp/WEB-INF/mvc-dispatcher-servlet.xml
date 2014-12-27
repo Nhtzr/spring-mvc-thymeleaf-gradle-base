@@ -32,6 +32,8 @@
     </bean>
 
     <bean class="org.thymeleaf.spring4.view.ThymeleafViewResolver"
+          p:contentType="text/html; charset=UTF-8"
+          p:characterEncoding="UTF-8"
           p:templateEngine-ref="templateEngine"/>
 
     <mvc:interceptors>
