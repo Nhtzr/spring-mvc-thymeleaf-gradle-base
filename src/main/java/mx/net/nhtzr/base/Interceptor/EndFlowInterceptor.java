@@ -24,6 +24,7 @@ public class EndFlowInterceptor extends HandlerInterceptorAdapter {
         log.trace("#postHandle() starts");
         if (handler.getClass().isAnnotationPresent(EndsFlow.class)) {
             request.getSession().invalidate();
+            log.trace("#postHandle() => Session invalidated");
         }
         super.postHandle(request, response, handler, modelAndView);
     }
