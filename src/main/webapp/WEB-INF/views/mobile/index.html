@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html
+	xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="http://www.thymeleaf.org"
+	xmlns:layout="http://www.ultraq.net.nz/web/thymeleaf/layout"
+	layout:decorator="layout/main_mobile">
+	<head>
+		<meta charset="UTF-8" />
+		<title>index</title>
+	</head>
+	<body layout:fragment="content">
+		<h1>Gradle - Spring MVC Hello World <em>Mobile</em></h1>
+		<p>Hello <th:block th:text="${name}" /></p>
+	</body>
+</html>

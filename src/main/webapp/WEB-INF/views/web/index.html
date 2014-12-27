@@ -3,13 +3,13 @@
 	xmlns="http://www.w3.org/1999/xhtml"
 	xmlns:th="http://www.thymeleaf.org"
 	xmlns:layout="http://www.ultraq.net.nz/web/thymeleaf/layout"
-	layout:decorator="layout/main">
+	layout:decorator="layout/main_web">
 	<head>
 		<meta charset="UTF-8" />
 		<title>index</title>
 	</head>
 	<body layout:fragment="content">
-		<h1>Gradle - Spring MVC Hello World</h1>
+		<h1>Gradle - Spring MVC Hello World <em>Web</em></h1>
 		<p>Hello <th:block th:text="${name}" /></p>
 	</body>
 </html>
