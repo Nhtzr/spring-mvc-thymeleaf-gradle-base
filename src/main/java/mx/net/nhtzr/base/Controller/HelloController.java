@@ -17,7 +17,7 @@ public class HelloController {
     @EndsFlow
     @RequestMapping(value = "/hello/{name:.*}", method = RequestMethod.GET)
     public ModelAndView hello(@PathVariable("name") String name) {
-        log.info("Enter {}", "HelloController#hello()");
+        log.info("#hello() starts");
         return new ModelAndView("index", "name", name);
     }
 
