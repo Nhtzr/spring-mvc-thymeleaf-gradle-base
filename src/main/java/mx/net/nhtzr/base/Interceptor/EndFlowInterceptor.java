@@ -8,7 +8,6 @@ import org.springframework.web.servlet.handler.HandlerInterceptorAdapter;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import javax.servlet.http.HttpSession;
 
 /**
  * Invalida la session despues de responder una peticion a la cual la
@@ -18,10 +17,11 @@ import javax.servlet.http.HttpSession;
  */
 public class EndFlowInterceptor extends HandlerInterceptorAdapter {
 
-    Logger log = LoggerFactory.getLogger(EndFlowInterceptor.class);
+    private final Logger log = LoggerFactory.getLogger(EndFlowInterceptor.class);
 
     @Override
     public void postHandle(HttpServletRequest request, HttpServletResponse response, Object handler, ModelAndView modelAndView) throws Exception {
+        log.trace("#postHandle() starts");
         if (handler.getClass().isAnnotationPresent(EndsFlow.class)) {
             request.getSession().invalidate();
         }

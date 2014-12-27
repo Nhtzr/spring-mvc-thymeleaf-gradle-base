@@ -12,13 +12,13 @@ import org.springframework.web.servlet.ModelAndView;
 @Controller
 public class HelloController {
 
-	Logger log = LoggerFactory.getLogger(HelloController.class);
+    private final Logger log = LoggerFactory.getLogger(HelloController.class);
 
-	@EndsFlow
-	@RequestMapping(value = "/hello/{name:.*}", method = RequestMethod.GET)
-	public ModelAndView hello(@PathVariable("name") String name) {
-		log.info("Enter {}", "HelloController#hello()");
-		return new ModelAndView("index", "name", name);
-	}
+    @EndsFlow
+    @RequestMapping(value = "/hello/{name:.*}", method = RequestMethod.GET)
+    public ModelAndView hello(@PathVariable("name") String name) {
+        log.info("Enter {}", "HelloController#hello()");
+        return new ModelAndView("index", "name", name);
+    }
 
 }

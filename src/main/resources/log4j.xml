@@ -9,7 +9,7 @@
     </appender>
 
     <root>
-		<priority value="all" />
+        <priority value="all"/>
         <appender-ref ref="defaultLog"/>
     </root>
 
