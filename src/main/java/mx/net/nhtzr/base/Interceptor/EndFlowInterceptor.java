@@ -3,6 +3,7 @@ package mx.net.nhtzr.base.Interceptor;
 import mx.net.nhtzr.base.Annotation.EndsFlow;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.web.method.HandlerMethod;
 import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.servlet.handler.HandlerInterceptorAdapter;
 
@@ -22,11 +23,22 @@ public class EndFlowInterceptor extends HandlerInterceptorAdapter {
     @Override
     public void postHandle(HttpServletRequest request, HttpServletResponse response, Object handler, ModelAndView modelAndView) throws Exception {
         log.trace("#postHandle() starts");
-        if (handler.getClass().isAnnotationPresent(EndsFlow.class)) {
+        if (isAnnotated(handler)) {
             request.getSession().invalidate();
             log.trace("#postHandle() => Session invalidated");
         }
         super.postHandle(request, response, handler, modelAndView);
+    }
+
+    private boolean isAnnotated(Object handler) {
+        if (handler == null
+                || !(handler instanceof HandlerMethod)) {
+            return false;
+        }
+
+        final HandlerMethod method = (HandlerMethod) handler;
+        return method.getBean().getClass().isAnnotationPresent(EndsFlow.class)
+                || method.getMethod().isAnnotationPresent(EndsFlow.class);
     }
 
 }
