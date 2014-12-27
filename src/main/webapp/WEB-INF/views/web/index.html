@@ -1,9 +1,8 @@
 <!DOCTYPE html>
-<html
-        xmlns:th="http://www.thymeleaf.org"
-        xmlns:layout="http://www.ultraq.net.nz/web/thymeleaf/layout"
-        xmlns="http://www.w3.org/1999/xhtml"
-        layout:decorator="layout/main_web">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/web/thymeleaf/layout"
+      layout:decorator="layout/main_web">
 <head>
     <meta charset="UTF-8"/>
     <title>index</title>
@@ -11,8 +10,6 @@
 <body layout:fragment="content">
 <h1>Gradle - Spring MVC Hello World <em>Web</em></h1>
 
-<p>Hello
-    <th:block th:text="${name}"/>
-</p>
+<p th:text="|Hello ${name}|">Hello Static Content !</p>
 </body>
 </html>
