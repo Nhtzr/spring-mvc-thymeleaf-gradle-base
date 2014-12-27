@@ -35,12 +35,12 @@ public class MobileInterceptor extends HandlerInterceptorAdapter {
 
     private void interceptMobile(ModelAndView modelAndView, String viewName, Device currentDevice) {
         if (currentDevice.isMobile()) {
-            log.trace("=> {viewVersion : 'mobile'}");
+            log.trace("#postHandle() => {viewVersion : 'mobile'}");
             modelAndView.setViewName("mobile/" + viewName);
             return;
         }
 
-        log.trace("=> {viewVersion : 'web'}");
+        log.trace("#postHandle() => {viewVersion : 'web'}");
         modelAndView.setViewName("web/" + viewName);
     }
 }
