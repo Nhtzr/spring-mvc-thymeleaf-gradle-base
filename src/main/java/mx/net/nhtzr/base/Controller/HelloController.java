@@ -20,5 +20,10 @@ public class HelloController {
         log.info("#hello() starts");
         return new ModelAndView("index", "name", name);
     }
+	
+	@RequestMapping("/")
+	public String index() {
+		return "forward:/hello/world";
+	}
 
 }
