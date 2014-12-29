@@ -35,10 +35,13 @@
           p:characterEncoding="UTF-8"
           p:templateEngine-ref="templateEngine"/>
 
+    <bean id="localeResolver" class="org.springframework.web.servlet.i18n.CookieLocaleResolver" />
+
     <mvc:interceptors>
         <bean class="mx.net.nhtzr.base.Interceptor.EndFlowInterceptor"/>
         <bean class="mx.net.nhtzr.base.Interceptor.MobileInterceptor"/>
         <bean class="org.springframework.mobile.device.DeviceResolverHandlerInterceptor"/>
+        <bean class="org.springframework.web.servlet.i18n.LocaleChangeInterceptor" p:paramName="lang" />
     </mvc:interceptors>
 
     <mvc:annotation-driven/>
