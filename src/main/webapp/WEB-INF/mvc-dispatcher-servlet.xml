@@ -43,7 +43,7 @@
         <bean class="org.springframework.mobile.device.DeviceResolverHandlerInterceptor"/>
         <bean class="org.springframework.web.servlet.i18n.LocaleChangeInterceptor" p:paramName="lang" />
     </mvc:interceptors>
-
+    <mvc:resources mapping="/js/**" location="js/" />
     <mvc:annotation-driven/>
 
     <task:executor id="executor" pool-size="5"/>
