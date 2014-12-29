@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/web/thymeleaf/layout"
+      xmlns="http://www.w3.org/1999/xhtml"
+      layout:decorator="layout/main_web">
+<head lang="en">
+    <meta charset="UTF-8" />
+    <title>Form example</title>
+</head>
+<body layout:fragment="content">
+<form action="#" th:action="@{/entity}" th:object="${helloEntity}" method="post">
+    <p>Init: <input type="text" th:field="*{init}"/></p>
+
+    <p>End: <input type="text" th:field="*{end}"/></p>
+
+    <p>Message: <input type="text" th:field="*{message}"/></p>
+
+    <p><input type="submit" value="Submit"/> <input type="reset" value="Reset"/></p>
+</form>
+</body>
+</html>
