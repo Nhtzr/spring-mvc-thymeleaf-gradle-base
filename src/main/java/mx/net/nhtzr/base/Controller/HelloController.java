@@ -39,5 +39,10 @@ public class HelloController {
         slowService.doNothing();
         return new ModelAndView("index", "name", name);
     }
+	
+	@RequestMapping("/")
+	public String index() {
+		return "forward:/hello/world";
+	}
 
 }
