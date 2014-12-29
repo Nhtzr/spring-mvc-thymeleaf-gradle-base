@@ -1,6 +1,6 @@
 "strict";
 
-function postJsonEntity() {
+function postAjax() {
     return $.ajax({
         type: "POST"
         , url: "/ajax"
@@ -10,9 +10,6 @@ function postJsonEntity() {
             , end: new Date()
             , message: " hello from client "
         })
-        , success: function () {
-            console.log(arguments)
-        }
     });
 }
 
